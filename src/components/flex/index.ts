@@ -1,4 +1,7 @@
+// Components
 import styled from "styled-components";
+
+// Types
 import type { FlexProps } from "./types";
 
 export const Flex = styled.div<FlexProps>`
