@@ -1,5 +1,6 @@
 //Components
 import { Flex } from "../../components/flex";
+import { Input } from "../../components/input";
 import { Typography } from "../../components/typography";
 
 //Styles
@@ -20,17 +21,18 @@ export function LoginPage() {
           </Flex>
         </Flex>
 
-        <Flex direction="column" gap="98px">
-          <Flex direction="column" gap="1rem">
-            <Flex direction="column" gap="0.75rem">
-              <Typography>Usuário</Typography>
-              <input type="text" />
-            </Flex>
-
-            <Flex direction="column" gap="0.75rem">
-              <Typography>Senha</Typography>
-              <input type="password" />
-            </Flex>
+        <Flex style={{ width: "100%" }} direction="column" gap="98px">
+          <Flex style={{ width: "100%" }} direction="column" gap="1rem">
+            <Input
+              label="Usuário"
+              placeholder="Digite seu usuário"
+              type="text"
+            />
+            <Input
+              label="Senha"
+              placeholder="Digite sua senha"
+              type="password"
+            />
           </Flex>
 
           <button>Enviar</button>
