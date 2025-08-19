@@ -14,6 +14,7 @@ export const StyledInput = styled.div`
     border: 1px solid #3c46cc;
     border-radius: 0.75rem;
     padding: 0.75rem;
+    color: #fff;
 
     &:focus {
       outline: none;
