@@ -1,6 +1,7 @@
 //Components
 import { Flex } from "../../components/flex";
 import { Input } from "../../components/input";
+import { SwitchOptions } from "../../components/switch-options";
 import { Typography } from "../../components/typography";
 
 //Styles
@@ -10,15 +11,12 @@ export function LoginPage() {
   return (
     <StyledLoginPage>
       <div className="login__container">
-        <Flex gap="2rem" direction="column">
+        <Flex style={{ width: "100%" }} gap="2rem" direction="column">
           <Typography fontSize="1.5rem" fontWeight="600">
             Olá, bem-vindo
           </Typography>
 
-          <Flex>
-            <button>Login</button>
-            <button>Criar conta</button>
-          </Flex>
+          <SwitchOptions />
         </Flex>
 
         <Flex style={{ width: "100%" }} direction="column" gap="98px">
@@ -35,7 +33,7 @@ export function LoginPage() {
             />
           </Flex>
 
-          <button>Enviar</button>
+          <button className="button__submit">Enviar</button>
         </Flex>
       </div>
     </StyledLoginPage>

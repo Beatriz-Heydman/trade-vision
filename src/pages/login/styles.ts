@@ -22,4 +22,26 @@ export const StyledLoginPage = styled.div`
     flex-direction: column;
     gap: 2rem;
   }
+
+  .button__submit {
+    width: 100%;
+    height: 3rem;
+    background-color: #3c46cc;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 600;
+    transition: all ease 0.2s;
+
+    &:hover {
+      background-color: #878ff5;
+    }
+
+    &:active {
+      transform: translateY(2px) scaleX(0.99);
+
+      background-color: #878ff5;
+    }
+  }
 `;
