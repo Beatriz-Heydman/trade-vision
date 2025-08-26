@@ -1,4 +1,5 @@
 //Components
+import { useState } from "react";
 import { Flex } from "../../components/flex";
 import { Input } from "../../components/input";
 import { SwitchOptions } from "../../components/switch-options";
@@ -8,6 +9,8 @@ import { Typography } from "../../components/typography";
 import { StyledLoginPage } from "./styles";
 
 export function LoginPage() {
+  const [isCreateAccount, setIsCreateAccount] = useState<boolean>(false);
+
   return (
     <StyledLoginPage>
       <div className="login__container">
@@ -16,7 +19,12 @@ export function LoginPage() {
             Olá, bem-vindo
           </Typography>
 
-          <SwitchOptions />
+          <SwitchOptions
+            checked={isCreateAccount}
+            onChange={(checked) => setIsCreateAccount(checked)}
+            leftLabel="Login"
+            rightLabel="Criar conta"
+          />
         </Flex>
 
         <Flex style={{ width: "100%" }} direction="column" gap="98px">

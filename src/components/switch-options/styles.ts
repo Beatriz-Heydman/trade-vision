@@ -1,54 +1,39 @@
 // Libs
 import styled from "styled-components";
+import type { SwitchOptionsProps } from "./types";
 
-export const StyledSwitch = styled.div`
-  user-select: none;
-  color: #fff !important;
+export const StyledSwitch = styled.div<SwitchOptionsProps>`
+  height: 50px;
+  border: 2px solid #3c46cc;
+  border-radius: 1.5rem;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+  cursor: pointer;
+  position: relative;
+  max-width: 275px;
   width: 100%;
+  background-color: #010539;
 
-  .option_text {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    z-index: 2;
+  .option-indicator {
+    right: ${(props) => (props.checked ? "-1px" : "calc(50% + 1px)")};
+    width: 50%;
     height: 100%;
-    align-items: center;
+    background-color: #3c46cc;
+    border-radius: 1.5rem;
+    transition: all ease 0.3s;
+    position: absolute;
+    z-index: 1;
   }
 
-  .react-switch-checkbox {
-    height: 0;
-    width: 0;
-    visibility: hidden;
-
-    &:checked + .react-switch-label .react-switch-button {
-      left: 100%;
-      transform: translateX(-100%);
-    }
-  }
-  .react-switch-label {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .option {
+    background: transparent;
+    border: none;
     cursor: pointer;
+    z-index: 2;
+    font-size: 0.875rem;
+    color: #fff;
     width: 100%;
-
-    height: 38px;
-    background: #000c2e;
-    border-radius: 75px;
-    position: relative;
-    transition: background-color 0.2s;
-
-    & .react-switch-button {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 50%;
-      height: 100%;
-      border-radius: 75px;
-      transition: 0.2s;
-      background: #3c46cc;
-      color: #fff !important;
-    }
+    height: 100%;
   }
 `;

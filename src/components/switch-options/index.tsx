@@ -1,20 +1,49 @@
+// Libs
+import { useEffect, useState } from "react";
+
+// Styles
 import { StyledSwitch } from "./styles";
 
-export function SwitchOptions() {
+// Types
+import type { SwitchOptionsProps } from "./types";
+
+export function SwitchOptions({
+  leftLabel,
+  rightLabel,
+  onChange,
+  checked: checkedProp = false,
+}: SwitchOptionsProps) {
+  const [isChecked, setIsChecked] = useState<boolean>(checkedProp);
+
+  function changeSwitchValue(checked: boolean) {
+    setIsChecked(checked);
+    onChange?.(checked);
+  }
+
+  useEffect(() => {
+    setIsChecked(checkedProp);
+  }, [checkedProp]);
+
   return (
-    <StyledSwitch>
-      <input
-        // checked
-        // onChange={}
-        className="react-switch-checkbox"
-        id={`react-switch-new`}
-        type="checkbox"
-      />
-      <label className="react-switch-label" htmlFor={`react-switch-new`}>
-        <span className="option_text">Login</span>
-        <span className="option_text">Criar conta</span>
-        <span className="react-switch-button"></span>
-      </label>
+    <StyledSwitch checked={isChecked}>
+      <div className="option-indicator" />
+
+      <button
+        className="option"
+        onClick={() => {
+          changeSwitchValue(false);
+        }}
+      >
+        {leftLabel}
+      </button>
+      <button
+        className="option"
+        onClick={() => {
+          changeSwitchValue(true);
+        }}
+      >
+        {rightLabel}
+      </button>
     </StyledSwitch>
   );
 }
