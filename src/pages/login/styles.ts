@@ -13,7 +13,7 @@ export const StyledLoginPage = styled.div`
     width: 100%;
     max-height: 600px;
     height: 100%;
-    border: 2px solid #300350;
+    border: 2px solid #11186f;
     border-radius: 3rem;
     display: flex;
     justify-content: center;
