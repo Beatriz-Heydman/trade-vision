@@ -24,5 +24,15 @@ export const StyledInput = styled.div`
     &:placeholder {
       color: #959595;
     }
+
+    &:disabled {
+      background-color: #a9a9a9;
+      border: none;
+      cursor: not-allowed;
+
+      &::placeholder {
+        color: #626262;
+      }
+    }
   }
 `;
