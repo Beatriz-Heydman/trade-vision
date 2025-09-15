@@ -3,4 +3,5 @@ export type TypographyProps = {
   fontWeight?: string;
   color?: string;
   fontFamily?: string;
+  lineHeight?: string;
 };

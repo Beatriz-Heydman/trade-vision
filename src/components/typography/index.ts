@@ -9,4 +9,5 @@ export const Typography = styled.span<TypographyProps>`
   font-weight: ${({ fontWeight = "400" }) => fontWeight};
   color: ${({ color = "#fff" }) => color};
   font-family: ${({ fontFamily = "Poppins" }) => fontFamily};
+  line-height: ${({ lineHeight = "normal" }) => lineHeight};
 `;
