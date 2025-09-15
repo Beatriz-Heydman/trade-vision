@@ -14,15 +14,15 @@ export const StyledInput = styled.div`
     border: 1px solid #3c46cc;
     border-radius: 0.75rem;
     padding: 0.75rem;
-    color: #fff;
+    color: ${({ theme }) => theme.colors.neutral[50]};
 
     &:focus {
       outline: none;
       border: 1px solid #878ff5;
     }
 
-    &:placeholder {
-      color: #959595;
+    &::placeholder {
+      color: ${({ theme }) => theme.colors.neutral[800]};
     }
 
     &:disabled {

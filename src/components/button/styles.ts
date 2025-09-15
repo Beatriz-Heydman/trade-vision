@@ -8,6 +8,7 @@ export const StyledButton = styled.button`
   align-items: center;
   gap: 0.5rem;
   background: linear-gradient(90deg, #2563eb, #9333ea);
+  color: ${({ theme }) => theme.colors.neutral[50]};
   border-radius: 0.5rem;
   padding: 0.8rem 1.5rem;
   border: none;

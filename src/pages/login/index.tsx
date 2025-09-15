@@ -1,5 +1,8 @@
-//Components
+// Libs
+import { useTheme } from "styled-components";
 import { useState } from "react";
+
+//Components
 import { Flex } from "../../components/flex";
 import { Input } from "../../components/input";
 import { SwitchOptions } from "../../components/switch-options";
@@ -11,11 +14,17 @@ import { StyledLoginPage } from "./styles";
 export function LoginPage() {
   const [isCreateAccount, setIsCreateAccount] = useState<boolean>(false);
 
+  const { colors } = useTheme();
+
   return (
     <StyledLoginPage>
       <div className="login__container">
         <Flex style={{ width: "100%" }} gap="2rem" direction="column">
-          <Typography fontSize="1.5rem" fontWeight="600">
+          <Typography
+            fontSize="1.5rem"
+            fontWeight="600"
+            color={colors.neutral[50]}
+          >
             Olá, bem-vindo
           </Typography>
 

@@ -4,17 +4,20 @@ import { HiTrendingUp } from "react-icons/hi";
 import { RxQuestionMarkCircled } from "react-icons/rx";
 import { LuChartBar } from "react-icons/lu";
 import { FaTrophy } from "react-icons/fa6";
+import { useTheme } from "styled-components";
 
 //Components
 import { Button } from "../../components/button";
 import { Flex } from "../../components/flex";
 import { Typography } from "../../components/typography";
+import { Card } from "../../components/card";
 
 // Styles
 import { StyledHomePage } from "./styles";
-import { Card } from "../../components/card";
 
 export function HomePage() {
+  const { colors } = useTheme();
+
   return (
     <StyledHomePage>
       <div className="section__top">
@@ -27,13 +30,17 @@ export function HomePage() {
           <Typography
             fontWeight="600"
             fontSize="1.8rem"
-            color="#000"
+            color={colors.neutral[950]}
             lineHeight="120%"
           >
             Visão Geral das Operações
           </Typography>
 
-          <Typography fontWeight="400" fontSize="1rem" color="#4B5563">
+          <Typography
+            fontWeight="400"
+            fontSize="1rem"
+            color={colors.neutral[700]}
+          >
             Acompanhe seus trades e performance em tempo real
           </Typography>
         </Flex>
@@ -43,7 +50,7 @@ export function HomePage() {
             console.log("clicou");
           }}
         >
-          <PiPlusBold color="#fff" fontSize="1.2rem" />
+          <PiPlusBold color={colors.neutral[50]} fontSize="1.2rem" />
           <Typography fontSize="1rem" fontWeight="400" fontFamily="Poppins">
             Cadastrar Operação
           </Typography>
@@ -69,14 +76,14 @@ export function HomePage() {
           value="68%"
           icon={<RxQuestionMarkCircled color="#2563eb" size={23} />}
           color="#DBEAFE"
-          textColor="#000"
+          textColor={colors.neutral[950]}
         />
         <Card
           title="Trades Realizados"
           value="142"
           icon={<LuChartBar color="#9333ea" size={22} />}
           color="#F3E8FF"
-          textColor="#000"
+          textColor={colors.neutral[950]}
         />
         <Card
           title="Maior Gain"

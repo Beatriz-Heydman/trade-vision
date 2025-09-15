@@ -1,3 +1,4 @@
+// Libs
 import styled from "styled-components";
 
 export const StyledLoginPage = styled.div`
@@ -30,7 +31,7 @@ export const StyledLoginPage = styled.div`
     border: none;
     border-radius: 0.75rem;
     font-size: 1rem;
-    color: #fff;
+    color: ${({ theme }) => theme.colors.neutral[50]};
     font-weight: 600;
     transition: all ease 0.2s;
 

@@ -18,7 +18,7 @@ export const StyledCard = styled.div<StyledCardProps>`
   padding: 1.5rem 2rem;
 
   .value {
-    color: ${({ textColor = "#000" }) => textColor};
+    color: ${({ textColor, theme }) => textColor || theme.colors.neutral[950]};
     font-weight: 600;
     font-size: 1.5rem;
   }
@@ -29,7 +29,8 @@ export const StyledCard = styled.div<StyledCardProps>`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: ${({ color = "#bababa" }) => color};
+    background-color: ${({ color, theme }) =>
+      color || theme.colors.neutral[200]};
     border-radius: 0.5rem;
   }
 

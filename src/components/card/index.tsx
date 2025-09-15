@@ -1,3 +1,6 @@
+// Libs
+import { useTheme } from "styled-components";
+
 // Components
 import { Typography } from "../typography";
 import { Flex } from "../flex";
@@ -9,10 +12,16 @@ import { StyledCard } from "./styles";
 import type { CardProps } from "./types";
 
 export function Card({ title, value, icon, color, textColor }: CardProps) {
+  const { colors } = useTheme();
+
   return (
     <StyledCard color={color} textColor={textColor}>
       <Flex direction="column" alignItems="flex-start">
-        <Typography color="#4B5563" fontSize="1rem" fontWeight="500">
+        <Typography
+          color={colors.neutral[800]}
+          fontSize="1rem"
+          fontWeight="500"
+        >
           {title}
         </Typography>
         <span className="value">{value}</span>

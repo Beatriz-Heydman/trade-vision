@@ -1,5 +1,7 @@
 // Libs
 import styled from "styled-components";
+
+// Types
 import type { SwitchOptionsProps } from "./types";
 
 export const StyledSwitch = styled.div<SwitchOptionsProps>`
@@ -32,7 +34,7 @@ export const StyledSwitch = styled.div<SwitchOptionsProps>`
     cursor: pointer;
     z-index: 2;
     font-size: 0.875rem;
-    color: #fff;
+    color: ${({ theme }) => theme.colors.neutral[50]};
     width: 100%;
     height: 100%;
   }
