@@ -44,4 +44,11 @@ export const StyledLoginPage = styled.div`
       background-color: #878ff5;
     }
   }
+
+  @media (max-width: 420px) {
+    .login__container {
+      min-height: 100%;
+      border-radius: 0;
+    }
+  }
 `;
