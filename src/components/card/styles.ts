@@ -8,6 +8,7 @@ export const StyledCard = styled.div<StyledCardProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 3rem;
   min-width: 286px;
   height: fit-content;
   border-radius: 0.75rem;
@@ -30,5 +31,9 @@ export const StyledCard = styled.div<StyledCardProps>`
     align-items: center;
     background-color: ${({ color = "#bababa" }) => color};
     border-radius: 0.5rem;
+  }
+
+  @media (max-width: 1445px) {
+    width: 100%;
   }
 `;

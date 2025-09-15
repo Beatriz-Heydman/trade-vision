@@ -17,17 +17,19 @@ import { Card } from "../../components/card";
 export function HomePage() {
   return (
     <StyledHomePage>
-      <Flex
-        style={{ width: "100%" }}
-        justifyContent="space-between"
-        alignItems="center"
-      >
+      <div className="section__top">
         <Flex
           style={{ width: "100%" }}
           direction="column"
           alignItems="flex-start"
+          gap="0.5rem"
         >
-          <Typography fontWeight="600" fontSize="1.8rem" color="#000">
+          <Typography
+            fontWeight="600"
+            fontSize="1.8rem"
+            color="#000"
+            lineHeight="120%"
+          >
             Visão Geral das Operações
           </Typography>
 
@@ -46,13 +48,14 @@ export function HomePage() {
             Cadastrar Operação
           </Typography>
         </Button>
-      </Flex>
+      </div>
 
       <Flex
-        style={{ width: "100%" }}
+        style={{ minWidth: "100%" }}
         justifyContent="space-between"
-        alignItems="flex-start"
+        alignItems="center"
         gap="1rem"
+        flexWrap="wrap"
       >
         <Card
           title="Total P&L"
