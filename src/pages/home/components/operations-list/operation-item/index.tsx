@@ -125,20 +125,20 @@ export function OperationItem({
       <Flex>
         <Flex>
           <Button onClick={() => console.log("clicou em favoritar")}>
-            <FaRegStar />
+            <FaRegStar fontSize={23} color={colors.neutral[700]} />
           </Button>
 
           <Button onClick={() => console.log("clicou em ler mais")}>
-            <PiNewspaper />
+            <PiNewspaper fontSize={23} color={colors.neutral[700]} />
           </Button>
 
           <Button onClick={() => console.log("clicou em editar")}>
-            <AiOutlineEdit />
+            <AiOutlineEdit fontSize={23} color={colors.neutral[700]} />
           </Button>
         </Flex>
 
         <Button onClick={() => console.log("clicou em excluir")}>
-          <FaRegTrashAlt />
+          <FaRegTrashAlt fontSize={23} color={colors.neutral[700]} />
         </Button>
       </Flex>
     </StyledOperationItem>

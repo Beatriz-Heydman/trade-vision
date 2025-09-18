@@ -15,7 +15,12 @@ export function OperationsList() {
   const { colors } = useTheme();
   return (
     <StyledOperationsList>
-      <Flex justifyContent="space-between" alignItems="center" gap="1.5rem">
+      <Flex
+        justifyContent="space-between"
+        alignItems="center"
+        gap="1rem"
+        style={{ padding: "1.5rem 2rem 0 2rem" }}
+      >
         <Typography
           fontSize="1.25rem"
           fontWeight="600"

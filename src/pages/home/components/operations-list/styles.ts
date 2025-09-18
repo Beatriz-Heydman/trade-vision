@@ -7,7 +7,6 @@ export const StyledOperationsList = styled.div`
   gap: 2rem;
   flex-direction: column;
   background-color: #fff;
-  padding: 2rem;
   border-radius: 0.75rem;
   border: 1px solid ${({ theme }) => theme.colors.neutral[100]};
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);

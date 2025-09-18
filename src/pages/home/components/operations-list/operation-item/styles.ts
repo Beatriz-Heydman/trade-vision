@@ -8,5 +8,5 @@ export const StyledOperationItem = styled.div`
   align-items: center;
   background-color: #fff;
   border-top: 2px solid ${({ theme }) => theme.colors.neutral[50]};
-  padding-top: 1.5rem;
+  padding: 1.5rem 2rem;
 `;
