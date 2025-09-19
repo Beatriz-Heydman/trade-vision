@@ -13,13 +13,15 @@ import { StyledOperationsList } from "./styles";
 
 export function OperationsList() {
   const { colors } = useTheme();
+
   return (
     <StyledOperationsList>
       <Flex
         justifyContent="space-between"
         alignItems="center"
         gap="1rem"
-        style={{ padding: "1.5rem 2rem 0 2rem" }}
+        flexWrap="wrap"
+        style={{ padding: "1.5rem 1.5rem 0 1.5rem" }}
       >
         <Typography
           fontSize="1.25rem"
@@ -46,7 +48,7 @@ export function OperationsList() {
         </Button>
       </Flex>
 
-      <Flex direction="column" gap="2rem">
+      <Flex direction="column" gap="1.5rem">
         <OperationItem
           value="+R$ 1.250"
           percentage="+2.8%"

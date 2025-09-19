@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const StyledHomePage = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   padding: 2rem;
   background-color: ${({ theme }) => theme.colors.neutral[50]};
 

@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const StyledOperationsList = styled.div`
   width: 100%;
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   flex-direction: column;
   background-color: #fff;
   border-radius: 0.75rem;

@@ -28,8 +28,13 @@ export function OperationItem({
 
   return (
     <StyledOperationItem>
-      <Flex gap="2.5rem">
-        <Flex direction="column" alignItems="flex-end" gap="0.25rem">
+      <Flex className="operation__item-content" gap="2.5rem">
+        <Flex
+          className="operation__item-gain"
+          direction="column"
+          alignItems="flex-end"
+          gap="0.25rem"
+        >
           <Typography
             fontSize="1rem"
             fontWeight="600"
@@ -122,7 +127,7 @@ export function OperationItem({
         </Flex>
       </Flex>
 
-      <Flex gap="2rem" alignItems="center">
+      <Flex className="operation__item-actions" gap="2rem" alignItems="center">
         <Flex gap="1rem" alignItems="center">
           <Button
             title="Favoritar"
