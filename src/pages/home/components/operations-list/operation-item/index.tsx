@@ -2,6 +2,7 @@
 import { FaRegStar, FaRegTrashAlt } from "react-icons/fa";
 import { PiNewspaper } from "react-icons/pi";
 import { AiOutlineEdit } from "react-icons/ai";
+import { useTheme } from "styled-components";
 
 // Components
 import { Flex } from "../../../../../components/flex";
@@ -10,7 +11,6 @@ import { Button } from "../../../../../components/button";
 
 // Styles
 import { StyledOperationItem } from "./styles";
-import { useTheme } from "styled-components";
 
 // Types
 import type { OperationItemProps } from "./types";
@@ -122,23 +122,55 @@ export function OperationItem({
         </Flex>
       </Flex>
 
-      <Flex>
-        <Flex>
-          <Button onClick={() => console.log("clicou em favoritar")}>
-            <FaRegStar fontSize={23} color={colors.neutral[700]} />
+      <Flex gap="2rem" alignItems="center">
+        <Flex gap="1rem" alignItems="center">
+          <Button
+            title="Favoritar"
+            variant="ghost"
+            onClick={() => console.log("clicou em favoritar")}
+          >
+            <FaRegStar
+              className="icon star"
+              fontSize={23}
+              color={colors.neutral[700]}
+            />
           </Button>
 
-          <Button onClick={() => console.log("clicou em ler mais")}>
-            <PiNewspaper fontSize={23} color={colors.neutral[700]} />
+          <Button
+            title="Ver comentário"
+            variant="ghost"
+            onClick={() => console.log("clicou em ver comentário")}
+          >
+            <PiNewspaper
+              className="icon paper"
+              fontSize={25}
+              color={colors.neutral[700]}
+            />
           </Button>
 
-          <Button onClick={() => console.log("clicou em editar")}>
-            <AiOutlineEdit fontSize={23} color={colors.neutral[700]} />
+          <Button
+            title="Editar"
+            variant="ghost"
+            onClick={() => console.log("clicou em editar")}
+          >
+            <AiOutlineEdit
+              className="icon edit"
+              fontSize={25}
+              color={colors.neutral[700]}
+            />
           </Button>
         </Flex>
 
-        <Button onClick={() => console.log("clicou em excluir")}>
-          <FaRegTrashAlt fontSize={23} color={colors.neutral[700]} />
+        <Button
+          title="Excluir"
+          variant="ghost"
+          onClick={() => console.log("clicou em excluir")}
+        >
+          <FaRegTrashAlt
+            className="icon trash"
+            fontSize={20}
+            color={colors.neutral[700]}
+          />
         </Button>
       </Flex>
     </StyledOperationItem>

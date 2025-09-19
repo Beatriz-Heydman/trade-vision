@@ -1,4 +1,5 @@
-export type ButtonProps = {
-  children: React.ReactNode;
-  onClick: () => void;
+import type { HTMLAttributes } from "react";
+
+export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
+  variant: "ghost" | "outline" | "solid";
 };

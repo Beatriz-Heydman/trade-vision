@@ -48,6 +48,7 @@ export function HomePage() {
           </Flex>
 
           <Button
+            variant="solid"
             onClick={() => {
               console.log("cliquei em cadastrar");
             }}

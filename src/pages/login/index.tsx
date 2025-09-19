@@ -10,6 +10,7 @@ import { Typography } from "../../components/typography";
 
 //Styles
 import { StyledLoginPage } from "./styles";
+import { Button } from "../../components/button";
 
 export function LoginPage() {
   const [isCreateAccount, setIsCreateAccount] = useState<boolean>(false);
@@ -50,7 +51,14 @@ export function LoginPage() {
             />
           </Flex>
 
-          <button className="button__submit">Enviar</button>
+          <Button
+            variant="solid"
+            onClick={() => {
+              console.log("cliquei em enviar");
+            }}
+          >
+            Enviar
+          </Button>
         </Flex>
       </div>
     </StyledLoginPage>

@@ -30,12 +30,19 @@ export function OperationsList() {
         </Typography>
 
         <Button
+          variant="outline"
           onClick={() => {
             console.log("cliquei em filtros");
           }}
         >
-          <FaFilter fontSize={20} />
-          <Typography>Filtros</Typography>
+          <FaFilter fontSize={20} color={colors.neutral[500]} />
+          <Typography
+            fontSize="1rem"
+            fontWeight="400"
+            color={colors.neutral[700]}
+          >
+            Filtros
+          </Typography>
         </Button>
       </Flex>
 
