@@ -1,23 +1,29 @@
 // Libs
+import { useState } from "react";
+import { useTheme } from "styled-components";
 import { PiPlusBold } from "react-icons/pi";
 import { HiTrendingUp } from "react-icons/hi";
 import { RxQuestionMarkCircled } from "react-icons/rx";
 import { LuChartBar } from "react-icons/lu";
 import { FaTrophy } from "react-icons/fa6";
-import { useTheme } from "styled-components";
 
 //Components
 import { Button } from "../../components/button";
 import { Flex } from "../../components/flex";
 import { Typography } from "../../components/typography";
 import { Card } from "../../components/card";
+import { Modal } from "../../components/modal";
+import { OperationsList } from "./components/operations-list";
 
 // Styles
 import { StyledHomePage } from "./styles";
-import { OperationsList } from "./components/operations-list";
 
 export function HomePage() {
   const { colors } = useTheme();
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  console.log(modalIsOpen);
 
   return (
     <StyledHomePage>
@@ -59,7 +65,6 @@ export function HomePage() {
             </Typography>
           </Button>
         </div>
-
         <Flex
           style={{ minWidth: "100%" }}
           justifyContent="space-between"
@@ -96,8 +101,26 @@ export function HomePage() {
             textColor="#10B981"
           />
         </Flex>
-
         <OperationsList />
+        <button
+          onClick={() => {
+            setModalIsOpen(!modalIsOpen);
+          }}
+          style={{
+            padding: "1rem 1.5rem",
+            borderRadius: "0.75rem",
+            backgroundColor: "#b6dcfe",
+            color: "#2d4e6b",
+            border: "2px solid #436c90",
+            cursor: "pointer",
+          }}
+        >
+          Abrir Modal
+        </button>
+        <Modal
+          isOpen={modalIsOpen}
+          onClose={() => setModalIsOpen(!modalIsOpen)}
+        />
       </div>
     </StyledHomePage>
   );
