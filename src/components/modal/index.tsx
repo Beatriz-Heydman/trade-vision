@@ -7,7 +7,7 @@ import type { ModalProps } from "./types";
 export function Modal({ isOpen, onClose, children }: ModalProps) {
   return (
     <StyledModal data-is-open={isOpen} onClick={onClose}>
-      {children}
+      <div className="modal-content">{children}</div>
     </StyledModal>
   );
 }
