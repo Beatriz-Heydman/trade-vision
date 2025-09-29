@@ -22,7 +22,9 @@ export function UserOptions({ userName }: UserOptionsPriops) {
 
   return (
     <StyledUserOptions>
-      <Typography color={colors.neutral[50]}>{nameInitials}</Typography>
+      <Typography fontSize="0.9rem" color={colors.neutral[50]}>
+        {nameInitials}
+      </Typography>
     </StyledUserOptions>
   );
 }

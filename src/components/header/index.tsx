@@ -30,7 +30,7 @@ export function Header() {
           </Typography>
         </Flex>
 
-        <UserOptions userName="lohaine bala de ice kiss" />
+        <UserOptions userName="lohane bala de icekiss" />
       </div>
     </StyledHeader>
   );
