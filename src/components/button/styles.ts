@@ -63,23 +63,26 @@ export const StyledButton = styled.button`
 
   &[data-variant="solid"] {
     width: fit-content;
-    background: linear-gradient(90deg, #2563eb, #9333ea);
+    background: ${({ theme }) => theme.colors.blue[400]};
     border: none;
     border-radius: 0.75rem;
     padding: 1rem 1.5rem;
     gap: 0.5rem;
     white-space: nowrap;
+    color: ${({ theme }) => theme.colors.neutral[50]};
+    font-size: 1rem;
+    font-weight: 500;
 
     transition: all ease 0.3s;
 
     &:hover {
-      background: linear-gradient(90deg, #9333ea, #2563eb);
+      filter: brightness(1.3);
       transform: translateY(-1px);
     }
 
     &:active {
+      filter: brightness(1.3);
       transform: translateY(1px) scaleX(0.99);
-      background: linear-gradient(90deg, #9333ea, #2563eb);
     }
   }
 `;
