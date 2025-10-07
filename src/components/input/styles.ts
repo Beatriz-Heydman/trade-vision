@@ -4,25 +4,25 @@ import styled from "styled-components";
 export const StyledInput = styled.div`
   width: 100%;
   display: flex;
-  gap: 0.75rem;
+  gap: 0.5rem;
   flex-direction: column;
 
   .input {
     width: 100%;
     height: 3.25rem;
     background-color: transparent;
-    border: 1px solid #3c46cc;
+    border: 2px solid ${({ theme }) => theme.colors.neutral[400]};
     border-radius: 0.75rem;
     padding: 0.75rem;
-    color: ${({ theme }) => theme.colors.neutral[50]};
+    color: ${({ color, theme }) => color || theme.colors.neutral[950]};
 
     &:focus {
       outline: none;
-      border: 1px solid #878ff5;
+      border: 2px solid ${({ theme }) => theme.colors.neutral[500]};
     }
 
     &::placeholder {
-      color: ${({ theme }) => theme.colors.neutral[800]};
+      color: ${({ theme }) => theme.colors.neutral[400]};
     }
 
     &:disabled {

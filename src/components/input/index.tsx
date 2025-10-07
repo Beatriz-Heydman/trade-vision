@@ -15,7 +15,7 @@ export function Input({ label, placeholder, type, ...props }: InputProps) {
 
   return (
     <StyledInput>
-      <Typography fontWeight="600" fontSize="1rem" color={colors.neutral[50]}>
+      <Typography fontWeight="500" fontSize="1rem" color={colors.neutral[950]}>
         {label}
       </Typography>
       <input
