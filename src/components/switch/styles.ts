@@ -31,7 +31,7 @@ export const StyledSwitch = styled.div<SwitchProps>`
 
     .switch-thumb {
       background-color: ${({ theme }) => theme.colors.neutral[400]};
-      transform: translateX(0);
+      transform: translateX(-1px);
     }
   }
 
