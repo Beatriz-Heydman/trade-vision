@@ -26,6 +26,9 @@ export const StyledModal = styled.div`
   .modal-content {
     width: fit-content;
     height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     background-color: ${(props) => props.theme.colors.neutral[50]};
     padding: 2rem;
     border-radius: 0.75rem;
