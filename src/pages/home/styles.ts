@@ -25,6 +25,21 @@ export const StyledHomePage = styled.div`
     gap: 1.5rem;
   }
 
+  .close-icon {
+    font-size: 38px;
+    color: ${({ theme }) => theme.colors.neutral[800]};
+    cursor: pointer;
+    transition: all ease 0.3s;
+
+    &:hover {
+      filter: brightness(1.3);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
   @media (max-width: 900px) {
     .section__top {
       flex-direction: column;

@@ -6,6 +6,7 @@ import { HiTrendingUp } from "react-icons/hi";
 import { RxQuestionMarkCircled } from "react-icons/rx";
 import { LuChartBar } from "react-icons/lu";
 import { FaTrophy } from "react-icons/fa6";
+import { AiFillCloseCircle } from "react-icons/ai";
 
 //Components
 import { Button } from "../../components/button";
@@ -14,6 +15,8 @@ import { Typography } from "../../components/typography";
 import { Card } from "../../components/card";
 import { Modal } from "../../components/modal";
 import { OperationsList } from "./components/operations-list";
+import { Switch } from "../../components/switch";
+import { Input } from "../../components/input";
 
 // Styles
 import { StyledHomePage } from "./styles";
@@ -23,7 +26,7 @@ export function HomePage() {
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  console.log(modalIsOpen);
+  const [switchChecked, setSwitchChecked] = useState(false);
 
   return (
     <StyledHomePage>
@@ -56,15 +59,87 @@ export function HomePage() {
           <Button
             variant="solid"
             onClick={() => {
+              setModalIsOpen(!modalIsOpen);
               console.log("cliquei em cadastrar");
             }}
           >
             <PiPlusBold color={colors.neutral[50]} fontSize="1.2rem" />
-            <Typography fontSize="1rem" fontWeight="400" fontFamily="Poppins">
-              Cadastrar Operação
-            </Typography>
+            Cadastrar Operação
           </Button>
+
+          <Modal
+            isOpen={modalIsOpen}
+            onClose={() => setModalIsOpen(!modalIsOpen)}
+          >
+            <Flex justifyContent="space-between" alignItems="center">
+              <Typography
+                fontSize="1.25rem"
+                fontWeight="600"
+                color={colors.neutral[950]}
+              >
+                Cadastrar Operação
+              </Typography>
+              <AiFillCloseCircle
+                className="close-icon"
+                onClick={() => setModalIsOpen(!modalIsOpen)}
+              />
+            </Flex>
+
+            <Flex direction="column" gap="1.5rem" style={{ width: "100%" }}>
+              <Flex gap="1.5rem" alignItems="center" style={{ width: "100%" }}>
+                <Input label="Paridade" placeholder="Ex: EUR/USD" />
+                <Input label="Data" type="date" placeholder="DD/MM/AAAA" />
+              </Flex>
+
+              <Flex gap="1.5rem" alignItems="center">
+                <Input label="Timeframe" placeholder="Selecione" />
+                <Input label="Estratégia" placeholder="Selecione" />
+              </Flex>
+
+              <Flex
+                gap="0.5rem"
+                direction="column"
+                alignItems="center"
+                style={{ width: "100%" }}
+              >
+                <Flex
+                  gap="1.5rem"
+                  alignItems="center"
+                  style={{ width: "100%" }}
+                >
+                  <Input label="Resultado" placeholder="USD" />
+                  <Input label="Risco / Retorno" placeholder="Ex: 4.00" />
+                </Flex>
+
+                <Flex
+                  alignItems="center"
+                  justifyContent="flex-start"
+                  gap="0.5rem"
+                  style={{ width: "100%" }}
+                >
+                  <Switch
+                    checked={switchChecked}
+                    onChange={() => setSwitchChecked(!switchChecked)}
+                  />
+                  <Typography
+                    fontSize="1rem"
+                    fontWeight="500"
+                    color={colors.neutral[800]}
+                  >
+                    Ganho
+                  </Typography>
+                </Flex>
+              </Flex>
+            </Flex>
+
+            <Input label="Observações" placeholder="Escreva aqui" />
+
+            <Button variant="solid" style={{ width: "100%" }}>
+              Concluir
+            </Button>
+          </Modal>
         </div>
+
         <Flex
           style={{ minWidth: "100%" }}
           justifyContent="space-between"
@@ -102,25 +177,6 @@ export function HomePage() {
           />
         </Flex>
         <OperationsList />
-        <button
-          onClick={() => {
-            setModalIsOpen(!modalIsOpen);
-          }}
-          style={{
-            padding: "1rem 1.5rem",
-            borderRadius: "0.75rem",
-            backgroundColor: "#b6dcfe",
-            color: "#2d4e6b",
-            border: "2px solid #436c90",
-            cursor: "pointer",
-          }}
-        >
-          Abrir Modal
-        </button>
-        <Modal
-          isOpen={modalIsOpen}
-          onClose={() => setModalIsOpen(!modalIsOpen)}
-        />
       </div>
     </StyledHomePage>
   );
