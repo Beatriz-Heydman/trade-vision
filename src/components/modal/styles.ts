@@ -7,6 +7,7 @@ export const StyledModal = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
   background-color: rgba(0, 0, 0, 0.5);
   transition: opacity 0.3s ease-out;
   position: fixed;
@@ -24,8 +25,10 @@ export const StyledModal = styled.div`
   }
 
   .modal-content {
-    width: fit-content;
-    height: fit-content;
+    width: 100%;
+    max-width: 710px;
+    height: 100%;
+    max-height: 900px;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -35,5 +38,24 @@ export const StyledModal = styled.div`
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     animation: slide-down 0.3s ease-out;
     border: 1px solid ${(props) => props.theme.colors.neutral[200]};
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      border-top-right-radius: 0.75rem;
+      border-bottom-right-radius: 0.75rem;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-top-right-radius: 0.75rem;
+      border-bottom-right-radius: 0.75rem;
+      margin-block: 6px !important;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: ${(props) => props.theme.colors.neutral[300]};
+      border-radius: 0.75rem;
+    }
   }
 `;
