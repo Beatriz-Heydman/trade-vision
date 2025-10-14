@@ -22,7 +22,9 @@ export const StyledInput = styled.div`
     }
 
     &::placeholder {
-      color: ${({ theme }) => theme.colors.neutral[400]};
+      font-size: 1rem;
+      font-weight: 500;
+      color: ${({ theme }) => theme.colors.neutral[700]};
     }
 
     &:disabled {
