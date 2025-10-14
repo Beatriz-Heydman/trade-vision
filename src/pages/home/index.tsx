@@ -17,6 +17,7 @@ import { Modal } from "../../components/modal";
 import { OperationsList } from "./components/operations-list";
 import { Switch } from "../../components/switch";
 import { Input } from "../../components/input";
+import { Dropzone } from "../../components/dropzone";
 
 // Styles
 import { StyledHomePage } from "./styles";
@@ -85,13 +86,13 @@ export function HomePage() {
               />
             </Flex>
 
-            <Flex direction="column" gap="1.5rem" style={{ width: "100%" }}>
+            <Flex direction="column" gap="1.25rem" style={{ width: "100%" }}>
               <Flex gap="1.5rem" alignItems="center" style={{ width: "100%" }}>
                 <Input label="Paridade" placeholder="Ex: EUR/USD" />
                 <Input label="Data" type="date" placeholder="DD/MM/AAAA" />
               </Flex>
 
-              <Flex gap="1.5rem" alignItems="center">
+              <Flex gap="1.5rem" alignItems="center" style={{ width: "100%" }}>
                 <Input label="Timeframe" placeholder="Selecione" />
                 <Input label="Estratégia" placeholder="Selecione" />
               </Flex>
@@ -133,6 +134,8 @@ export function HomePage() {
             </Flex>
 
             <Input label="Observações" placeholder="Escreva aqui" />
+
+            <Dropzone label="Imagem da operação" />
 
             <Button variant="solid" style={{ width: "100%" }}>
               Concluir
