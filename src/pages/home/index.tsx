@@ -7,6 +7,7 @@ import { RxQuestionMarkCircled } from "react-icons/rx";
 import { LuChartBar } from "react-icons/lu";
 import { FaTrophy } from "react-icons/fa6";
 import { AiFillCloseCircle } from "react-icons/ai";
+import { Select, MenuItem } from "@mui/material";
 
 //Components
 import { Button } from "../../components/button";
@@ -93,8 +94,34 @@ export function HomePage() {
               </Flex>
 
               <Flex gap="1.5rem" alignItems="center" style={{ width: "100%" }}>
-                <Input label="Timeframe" placeholder="Selecione" />
-                <Input label="Estratégia" placeholder="Selecione" />
+                <Select
+                  sx={{
+                    ".MuiOutlinedInput-notchedOutline": {
+                      borderColor: "red",
+                    },
+                    "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                      borderColor: "yellow",
+                    },
+                  }}
+                  id="demo-controlled-open-select"
+                  label="Timeframe"
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+
+                <Select id="demo-controlled-open-select" label="Timeframe">
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
               </Flex>
 
               <Flex
