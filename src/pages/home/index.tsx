@@ -94,34 +94,69 @@ export function HomePage() {
               </Flex>
 
               <Flex gap="1.5rem" alignItems="center" style={{ width: "100%" }}>
-                <Select
-                  sx={{
-                    ".MuiOutlinedInput-notchedOutline": {
-                      borderColor: "red",
-                    },
-                    "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                      borderColor: "yellow",
-                    },
-                  }}
-                  id="demo-controlled-open-select"
-                  label="Timeframe"
+                <Flex
+                  direction="column"
+                  gap="0.5rem"
+                  alignItems="flex-start"
+                  style={{ width: "100%" }}
                 >
-                  <MenuItem value="">
-                    <em>None</em>
-                  </MenuItem>
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>Twenty</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem>
-                </Select>
+                  <Typography
+                    fontSize="1rem"
+                    fontWeight="500"
+                    color={colors.neutral[950]}
+                  >
+                    Timeframe
+                  </Typography>
+                  <Select
+                    sx={{
+                      width: "100%",
+                      borderRadius: "0.75rem",
+                      ".MuiOutlinedInput-notchedOutline": {
+                        border: `2px solid ${colors.neutral[400]}`,
+                      },
+                      "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                        borderColor: colors.neutral[300],
+                      },
+                    }}
+                    id="demo-controlled-open-select"
+                  >
+                    <MenuItem value={1}>Opção 1</MenuItem>
+                    <MenuItem value={2}>Opção 2</MenuItem>
+                    <MenuItem value={3}>Opção 3</MenuItem>
+                  </Select>
+                </Flex>
 
-                <Select id="demo-controlled-open-select" label="Timeframe">
-                  <MenuItem value="">
-                    <em>None</em>
-                  </MenuItem>
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>Twenty</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem>
-                </Select>
+                <Flex
+                  direction="column"
+                  gap="0.5rem"
+                  alignItems="flex-start"
+                  style={{ width: "100%" }}
+                >
+                  <Typography
+                    fontSize="1rem"
+                    fontWeight="500"
+                    color={colors.neutral[950]}
+                  >
+                    Estratégia
+                  </Typography>
+                  <Select
+                    sx={{
+                      width: "100%",
+                      borderRadius: "0.75rem",
+                      ".MuiOutlinedInput-notchedOutline": {
+                        border: `2px solid ${colors.neutral[400]}`,
+                      },
+                      "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                        borderColor: colors.neutral[300],
+                      },
+                    }}
+                    id="demo-controlled-open-select"
+                  >
+                    <MenuItem value={1}>Opção 1</MenuItem>
+                    <MenuItem value={2}>Opção 2</MenuItem>
+                    <MenuItem value={3}>Opção 3</MenuItem>
+                  </Select>
+                </Flex>
               </Flex>
 
               <Flex
