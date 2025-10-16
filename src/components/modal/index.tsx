@@ -1,5 +1,7 @@
-// Styles
+// Libs
 import { useEffect } from "react";
+
+// Styles
 import { StyledModal } from "./styles";
 
 // Types
