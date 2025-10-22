@@ -1,3 +1,4 @@
-export type UserOptionsPriops = {
+export type UserOptionsProps = {
   userName: string;
+  onClick?: () => void;
 };

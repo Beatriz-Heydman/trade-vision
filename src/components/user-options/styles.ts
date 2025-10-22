@@ -10,7 +10,5 @@ export const StyledUserOptions = styled.div`
   border-radius: 50%;
   background-color: ${(props) => props.theme.colors.neutral[400]};
   cursor: pointer;
-
-  &:hover {
-  }
+  position: fixed;
 `;

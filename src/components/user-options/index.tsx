@@ -8,9 +8,9 @@ import { Typography } from "../typography";
 import { StyledUserOptions } from "./styles";
 
 // Types
-import type { UserOptionsPriops } from "./types";
+import type { UserOptionsProps } from "./types";
 
-export function UserOptions({ userName }: UserOptionsPriops) {
+export function UserOptions({ userName, onClick }: UserOptionsProps) {
   const { colors } = useTheme();
 
   const nameInitials = userName
@@ -21,7 +21,7 @@ export function UserOptions({ userName }: UserOptionsPriops) {
     .toUpperCase();
 
   return (
-    <StyledUserOptions>
+    <StyledUserOptions onClick={onClick}>
       <Typography fontSize="0.9rem" color={colors.neutral[50]}>
         {nameInitials}
       </Typography>

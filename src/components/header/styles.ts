@@ -29,4 +29,29 @@ export const StyledHeader = styled.header`
     align-items: center;
     justify-content: center;
   }
+
+  .menu-navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 0;
+  }
+
+  .menu-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.neutral[950]};
+    font-size: 1rem;
+    background-color: ${({ theme }) => theme.colors.neutral[0]};
+    transition: all ease 0.3s;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.neutral[100]};
+    }
+  }
 `;
