@@ -54,4 +54,10 @@ export const StyledHeader = styled.header`
       background-color: ${({ theme }) => theme.colors.neutral[100]};
     }
   }
+
+  .user-options-container {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+  }
 `;

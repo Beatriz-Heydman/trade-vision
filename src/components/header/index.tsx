@@ -1,9 +1,9 @@
 // Libs
-import { useEffect, useRef, useState } from "react";
 import { useTheme } from "styled-components";
 import { FaChartLine } from "react-icons/fa6";
 import { RxExit } from "react-icons/rx";
 import { LuSettings } from "react-icons/lu";
+import { useState } from "react";
 
 // Components
 import { Flex } from "../flex";
@@ -17,23 +17,8 @@ import { StyledHeader } from "./styles";
 export function Header() {
   const { colors } = useTheme();
 
-  const [menuPopupOpen, setMenuPopupOpen] = useState(false);
-
-  const menuPopupRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handleCloseMenuPopup(event: MouseEvent) {
-      const target = event.target as HTMLElement;
-      if (!menuPopupRef.current?.contains(target)) {
-        setMenuPopupOpen(false);
-      }
-    }
-
-    document.addEventListener("mousedown", handleCloseMenuPopup);
-
-    return () =>
-      document.removeEventListener("mousedown", handleCloseMenuPopup);
-  }, []);
+  const [controlledIsOpen, setControlledIsOpen] = useState(false);
+  console.log(controlledIsOpen, "Estado controlado do MenuPopup no Header");
 
   return (
     <StyledHeader>
@@ -52,30 +37,32 @@ export function Header() {
           </Typography>
         </Flex>
 
-        <div ref={menuPopupRef}>
-          <UserOptions
-            onClick={() => {
-              setMenuPopupOpen(!menuPopupOpen);
-            }}
-            userName="lohane bala de icekiss"
-          />
+        <MenuPopup
+          onChange={() => {
+            setControlledIsOpen(!controlledIsOpen);
+          }}
+          isOpen={controlledIsOpen}
+          trigger={
+            <UserOptions
+              onClick={() => {
+                console.log("User options clicked");
+              }}
+              userName="lohane bala de icekiss"
+            />
+          }
+        >
+          <nav className="menu-navigation">
+            <a className="menu-item" href="Settings">
+              <LuSettings size={18} color={colors.neutral[950]} />
+              Configurações
+            </a>
 
-          {menuPopupOpen && (
-            <MenuPopup>
-              <nav className="menu-navigation">
-                <a className="menu-item" href="Settings">
-                  <LuSettings size={18} color={colors.neutral[950]} />
-                  Configurações
-                </a>
-
-                <a className="menu-item" href="Logout">
-                  <RxExit size={16} color={colors.neutral[950]} />
-                  Sair
-                </a>
-              </nav>
-            </MenuPopup>
-          )}
-        </div>
+            <a className="menu-item" href="Logout">
+              <RxExit size={16} color={colors.neutral[950]} />
+              Sair
+            </a>
+          </nav>
+        </MenuPopup>
       </div>
     </StyledHeader>
   );
