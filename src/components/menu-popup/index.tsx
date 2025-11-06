@@ -1,5 +1,5 @@
 // Styles
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { StyledMenuPopup } from "./styles";
 
 // Types
@@ -11,18 +11,29 @@ export function MenuPopup({
   isOpen: controlledIsOpen,
   onChange,
 }: MenuPopupProps) {
+  // Controlado internamente se não for controlado externamente
   const [openStateInternal, setOpenStateInternal] = useState(false);
   console.log(
     openStateInternal,
     "Cliquei no trigger para abrir ou fechar o menu popup"
   );
 
-  const isOpen = controlledIsOpen ?? openStateInternal;
+  // Verifica se o componente está sendo controlado externamente
+  const isControlled = controlledIsOpen !== undefined;
+
+  // Determina o estado atual de abertura do menu popup
+  const isOpen = isControlled ? controlledIsOpen : openStateInternal;
+
+  useEffect(() => {
+    if (isControlled) {
+      setOpenStateInternal(controlledIsOpen);
+    }
+  }, [controlledIsOpen, isControlled]);
 
   const menuPopupOpenState = () => {
     const newstate = !isOpen;
 
-    if (controlledIsOpen === undefined) {
+    if (!isControlled) {
       setOpenStateInternal(newstate);
     }
 
