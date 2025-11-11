@@ -13,6 +13,7 @@ import { MenuPopup } from "../menu-popup";
 
 // Styles
 import { StyledHeader } from "./styles";
+import { Button } from "../button";
 
 export function Header() {
   const { colors } = useTheme();
@@ -62,6 +63,16 @@ export function Header() {
               Sair
             </a>
           </nav>
+        </MenuPopup>
+
+        <MenuPopup
+          // onChange={() => {
+          //   setControlledIsOpen(!controlledIsOpen);
+          // }}
+          // isOpen={controlledIsOpen}
+          trigger={<Button>Ações da tabela</Button>}
+        >
+          Excluir item
         </MenuPopup>
       </div>
     </StyledHeader>

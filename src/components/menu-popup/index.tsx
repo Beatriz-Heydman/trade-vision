@@ -1,5 +1,7 @@
+// Libs
+import { useEffect, useRef, useState } from "react";
+
 // Styles
-import { useEffect, useState } from "react";
 import { StyledMenuPopup } from "./styles";
 
 // Types
@@ -11,27 +13,23 @@ export function MenuPopup({
   isOpen: controlledIsOpen,
   onChange,
 }: MenuPopupProps) {
-  // Controlado internamente se não for controlado externamente
-  const [openStateInternal, setOpenStateInternal] = useState(false);
-  console.log(
-    openStateInternal,
-    "Cliquei no trigger para abrir ou fechar o menu popup"
-  );
+  const [openStateInternal, setOpenStateInternal] = useState(false); // Controlado internamente se não for controlado externamente
 
-  // Verifica se o componente está sendo controlado externamente
-  const isControlled = controlledIsOpen !== undefined;
+  const isControlled = controlledIsOpen !== undefined; // Verifica se o componente está sendo controlado externamente
 
-  // Determina o estado atual de abertura do menu popup
-  const isOpen = isControlled ? controlledIsOpen : openStateInternal;
+  const menuRef = useRef<HTMLDivElement>(null); // Referência ao elemento do menu popup
 
+  // Sincronização do estado interno e externo
   useEffect(() => {
     if (isControlled) {
       setOpenStateInternal(controlledIsOpen);
+      console.log(controlledIsOpen, "Sincronizado");
     }
   }, [controlledIsOpen, isControlled]);
 
+  // Função para alternar o estado de abertura do menu popup
   const menuPopupOpenState = () => {
-    const newstate = !isOpen;
+    const newstate = !openStateInternal;
 
     if (!isControlled) {
       setOpenStateInternal(newstate);
@@ -40,6 +38,24 @@ export function MenuPopup({
     onChange?.(newstate);
   };
 
+  // Fechar o menu popup ao clicar fora dele
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        openStateInternal &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node)
+      ) {
+        menuPopupOpenState();
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [openStateInternal]);
+
   return (
     <StyledMenuPopup>
       <div
@@ -47,12 +63,16 @@ export function MenuPopup({
         onClick={() => {
           menuPopupOpenState();
         }}
+        ref={menuRef}
       >
         {trigger}
       </div>
-      <div className="menu-popup-content" data-is-open={isOpen}>
-        {children}
-      </div>
+
+      {openStateInternal && (
+        <div className="menu-popup-content" data-is-open={openStateInternal}>
+          {children}
+        </div>
+      )}
     </StyledMenuPopup>
   );
 }
